@@ -2,7 +2,7 @@
     <div>
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img :src="item.imgUrl" class="item-img">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -17,29 +17,12 @@
 <script>
 export default {
     name: 'HomeRecommend',
+    props: {
+        list: Array
+    },
     data () {
         return {
-            recommendList: [{
-                id: '0001',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                title: '北京野生动物园',
-                desc: '敢与森林之王近距离接触吗？'
-            }, {
-                id: '0002',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/29/29d9b9078000774fa3.img.jpg_200x200_3621a35a.jpg',
-                title: '北京欢乐谷',
-                desc: '亚洲唯一飞行式过山车等你来挑战'
-            }, {
-                id: '0003',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/2005/30/307fa37039eab5cba3.water.jpg_200x200_39faf9c6.jpg',
-                title: '颐和园',
-                desc: '中国现存最大的皇家园林'
-            }, {
-                id: '0004',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1703/f4/f4aec6dee3d6f630a3.water.jpg_200x200_1a2e37cd.jpg',
-                title: '古北水镇司马台新村山水城',
-                desc: '身临“野性天地”，感受“适者生存”'
-            }]
+            
         }
     }
 }
