@@ -36,9 +36,11 @@ export default {
         }
     },
     mounted () {
+        // 在window上绑定事件
         window.addEventListener('scroll', this.handleScroll)
     },
     unmounted () {
+        // 在window上的事件解绑
         window.removeEventListener('scroll', this.handleScroll)
     }
 }
