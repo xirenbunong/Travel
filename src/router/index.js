@@ -20,5 +20,10 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  // 每次切换页面，页面都回到最顶部，不让前一页面的滑动影响后一页面的展示
+  scrollBehavior (to, from, savedPosition){
+    //return desired position}
+    return { x: 0, y: 0}
+  }
 })

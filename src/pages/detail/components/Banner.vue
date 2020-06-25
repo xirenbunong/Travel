@@ -1,19 +1,18 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="https://n3.hdfimg.com/g3/M05/07/00/v4YBAF7sZdmAdMTSAACZpO2EkPs940_800_800_1.jpg?340d" />
+            <img class="banner-img" :src="bannerImg" />
             <div class="banner-info">
                 <div class="banner-tittle">
-                <!-- {{this.sightName}} -->
-                海洋世界
+                {{this.sightName}}
                 </div>
                 <div class="banner-number">
                 <span class="iconfont banner-icon">&#xe692;</span>
-                <!-- {{this.bannerImgs.length}} -->39
+                {{this.gallaryImgs.length}}
                 </div>
             </div>
         </div>
-        <CommonGallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></CommonGallary>
+        <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"></CommonGallary>
     </div>
 </template>
 
@@ -24,15 +23,14 @@ export default {
     components: {
         CommonGallary
     },
-    // props: {
-    //     sightName: String,
-    //     bannerImg: String,
-    //     bannerImgs: Array
-    // },
+    props: {
+        sightName: String,
+        bannerImg: String,
+        gallaryImgs: Array
+    },
     data () {
         return {
-            showGallary: false,
-            imgs: ['https://n3.hdfimg.com/g3/M05/07/00/v4YBAF7sZdmAdMTSAACZpO2EkPs940_800_800_1.jpg?340d']
+            showGallary: false
         }
     },
     methods: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <detail-banner></detail-banner>
+        <detail-banner :sightName="sightName" :bannerImg="bannerImg" :gallaryImgs="gallaryImgs"></detail-banner>
         <detail-header></detail-header>
         <div class="content">
             <detail-list :list="list"></detail-list>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
@@ -20,32 +21,34 @@ export default {
         DetailHeader,
         DetailList
     },
+    mounted () {
+         this.getDetailInfo()
+    },
     data () {
         return {
-            list: [{
-                title: '儿童票',
-                children: [{
-                    title: '儿童特价票',
-                    children: [{
-                        title: '儿童特价票 -- 连锁销售'
-                    }]
-                }]
-            }, {
-                title: '成人票',
-                children: [{
-                    title: '成人三馆联票'
-                }]
-            }, {
-                title: '学生票',
-                children: [{
-                    title: '学生连票'
-                }]
-            }, {
-                title: '特惠票',
-                children: [{
-                    title: '周日特惠票'
-                }]
-            }]
+            sightName: '',
+            bannerImg: '',
+            gallaryImgs: [],
+            list: []
+        }
+    },
+    methods: {
+        getDetailInfo () {
+            // axios.get('/api/detail.json?id=' + this.$route.params.id)
+            axios.get('/api/detail.json', {
+                params: {
+                    id: this.$route.params.id
+                }
+            }).then(res => {
+                res = res.data
+                if (res.ret && res.data) {
+                    const data = res.data
+                    this.sightName = data.sightName
+                    this.bannerImg = data.bannerImg
+                    this.gallaryImgs = data.gallaryImgs
+                    this.list = data.categoryList
+                }
+            })
         }
     }
 }
