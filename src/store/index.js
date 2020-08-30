@@ -15,12 +15,13 @@ export default new Vuex.Store({
     state: {
         city: defaultCity
     },
-    actions: {
-        // ctx是上下文
-        changeCity (ctx, city) {
-            ctx.commit('changeCity', city)
-        }
-    },
+    // 没有异步操作，actions可以省略，直接commit改变mutations即可
+    // actions: {
+    //     // ctx是上下文
+    //     changeCity (ctx, city) {
+    //         ctx.commit('changeCity', city)
+    //     }
+    // },
     mutations: {
         changeCity (state, city) {
             state.city = city
