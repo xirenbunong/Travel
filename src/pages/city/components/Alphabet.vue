@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "CityAlphabet",
+  name: 'CityAlphabet',
   props: {
     cities: Object
   },
@@ -30,20 +30,20 @@ export default {
       return letters
     }
   },
-  data() {
+  data () {
     return {
       touchStatus: false, // 滑动状态，false代表未滑动或者滑动结束
       startY: 0,
       timer: null
-    };
+    }
   },
-  updated() {
+  updated () {
     // 页面第一个元素A距离顶部的高度
     this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
-    handleLetterClick(e) {
-      this.$emit("change", e.target.innerText);
+    handleLetterClick (e) {
+      this.$emit('change', e.target.innerText)
     },
     handleTouchStart () {
       this.touchStatus = true
@@ -69,7 +69,7 @@ export default {
       this.touchStatus = false
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>

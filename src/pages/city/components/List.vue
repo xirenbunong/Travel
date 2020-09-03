@@ -25,7 +25,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </template>
@@ -34,35 +33,35 @@
 import Bscroll from 'better-scroll'
 import { mapState } from 'vuex'
 export default {
-    name: 'CityList',
-    props: {
-        hot: Array,
-        cities: Object,
-        letter: String
-    },
-    computed: {
-      ...mapState(['city'])
-    },
-    methods: {
-      handleCityClick(city) {
-        // this.$store.dispatch('changeCity', city)
-        this.$store.commit('changeCity', city)
-        this.$router.push('/')
-      }
-    },
-    // dom挂载完毕后执行
-    mounted() {
-        this.scroll = new Bscroll(this.$refs.wrapper)
-    },
-    watch:   {
-      letter () {
-        console.log(this.letter)
-        if (this.letter) {
-          const element = this.$refs[this.letter][0]
-          this.scroll.scrollToElement(element)
-        }
+  name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object,
+    letter: String
+  },
+  computed: {
+    ...mapState(['city'])
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
+    }
+  },
+  // dom挂载完毕后执行
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      console.log(this.letter)
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
       }
     }
+  }
 }
 </script>
 
