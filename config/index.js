@@ -13,7 +13,7 @@ module.exports = {
     // 代理：请求转发功能
     proxyTable: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://10.1.20.167:8080',
         pathRewrite: {
           '^/api': '/static/mock/'
         }
@@ -21,7 +21,7 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '10.1.20.167', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
