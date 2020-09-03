@@ -27,6 +27,7 @@ new Vue({
   template: '<App/>'
 })
 
+// eslint-disable-next-line no-lone-blocks
 {
   // const Construct = Vue.extend()
   // const vm = new Construct({
