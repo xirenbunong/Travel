@@ -19,11 +19,11 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-    name: 'HomeHeader',
-    computed: {
-      // vuex的映射方法
-      ...mapState(['city'])
-    }
+  name: 'HomeHeader',
+  computed: {
+    // vuex的映射方法
+    ...mapState(['city'])
+  }
 }
 </script>
 

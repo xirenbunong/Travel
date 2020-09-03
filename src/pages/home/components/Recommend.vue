@@ -22,14 +22,14 @@
 
 <script>
 export default {
-  name: "HomeRecommend",
+  name: 'HomeRecommend',
   props: {
     list: Array
   },
-  data() {
-    return {};
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
