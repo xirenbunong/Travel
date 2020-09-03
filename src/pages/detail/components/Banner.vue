@@ -19,32 +19,32 @@
 </template>
 
 <script>
-import CommonGallary from "@/common/gallary/Gallary";
-import FadeAnimation from "@/common/fade/Fade";
+import CommonGallary from '@/common/gallary/Gallary'
+import FadeAnimation from '@/common/fade/Fade'
 export default {
-    name: 'DetailBanner',
-    components: {
-        CommonGallary,
-        FadeAnimation
-    },
-    props: {
-        sightName: String,
-        bannerImg: String,
-        gallaryImgs: Array
-    },
-    data () {
-        return {
-            showGallary: false
-        }
-    },
-    methods: {
-        handleBannerClick () {
-            this.showGallary = true
-        },
-        handleGallaryClose () {
-            this.showGallary = false
-        }
+  name: 'DetailBanner',
+  components: {
+    CommonGallary,
+    FadeAnimation
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
+  data () {
+    return {
+      showGallary: false
     }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
+    },
+    handleGallaryClose () {
+      this.showGallary = false
+    }
+  }
 }
 </script>
 

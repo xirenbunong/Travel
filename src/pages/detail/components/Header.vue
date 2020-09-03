@@ -13,36 +13,36 @@
 
 <script>
 export default {
-    name: 'DetailHeader',
-    data () {
-        return {
-            showAbs: true,
-            opacityStyle: {
-                opacity: 0
-            }
-        }
-    },
-    methods: {
-    handleScroll () {
-        const top = document.documentElement.scrollTop
-        if (top > 60) {
-            let opacity = top / 140
-            opacity = opacity > 1 ? 1 : opacity
-            this.opacityStyle = { opacity }
-            this.showAbs = false
-        } else {
-            this.showAbs = true
-        }
-        }
-    },
-    mounted () {
-        // 在window上绑定事件
-        window.addEventListener('scroll', this.handleScroll)
-    },
-    unmounted () {
-        // 在window上的事件解绑
-        window.removeEventListener('scroll', this.handleScroll)
+  name: 'DetailHeader',
+  data () {
+    return {
+      showAbs: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
+  },
+  methods: {
+    handleScroll () {
+      const top = document.documentElement.scrollTop
+      if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = { opacity }
+        this.showAbs = false
+      } else {
+        this.showAbs = true
+      }
+    }
+  },
+  mounted () {
+    // 在window上绑定事件
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    // 在window上的事件解绑
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 }
 </script>
 
