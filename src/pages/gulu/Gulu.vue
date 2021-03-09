@@ -15,7 +15,7 @@ export default {
     GuluInput
   },
   methods: {
-    inputChange(e) {
+    inputChange (e) {
       console.log('iiiii', e)
     }
   }

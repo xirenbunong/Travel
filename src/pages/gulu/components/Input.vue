@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <input type="text" :value="value" :disabled="disabled" 
+    <input type="text" :value="value" :disabled="disabled"
       @change="$emit('change', $event)"
       @input="$emit('input', $event)"
       @focus="$emit('focus', $event)"
@@ -10,7 +10,7 @@
       <span>tubiao</span>
       <span>cuowutishi</span>
     </template>
-  
+
   </div>
 </template>
 
@@ -30,10 +30,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .wrapper 
+  .wrapper
     display: inline-block;
     font-size: 12px;
-    input 
+    input
       height: 32px;
       border: 1px solid #999;
       border-radius: 4px;
@@ -49,5 +49,4 @@ export default {
       color: #ccc;
       cursor: not-allowed;
 
-  
 </style>
